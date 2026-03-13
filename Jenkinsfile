@@ -3,9 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo/ml-project.git'
+                git 'https://github.com/Patel-Abhi29/Mlops-jenkins.git'
             }
         }
 
@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Train Model') {
+        stage('Run Training Script') {
             steps {
                 sh 'python train.py'
             }
@@ -25,7 +25,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline completed successfully'
+            echo 'Pipeline executed successfully'
         }
         failure {
             echo 'Pipeline failed'
