@@ -3,21 +3,15 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Patel-Abhi29/Mlops-jenkins.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
             }
         }
 
         stage('Run Training Script') {
             steps {
-                sh 'python train.py'
+                sh 'python3 train.py'
             }
         }
 
